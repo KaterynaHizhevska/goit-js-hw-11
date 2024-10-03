@@ -32,10 +32,11 @@ export function renderGallery(data, galleryElement) {
 
   galleryElement.innerHTML = formatting;
 
-  const lightbox = new SimpleLightbox('.gallery a');
-  lightbox.refresh();
+  //   const lightbox = new SimpleLightbox('.gallery a');
+  //   lightbox.refresh();
+  // Перенесено
 }
-
+  
 export function showError(message) {
   iziToast.error({
     title: 'Error',

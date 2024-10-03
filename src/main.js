@@ -55,3 +55,6 @@ form.addEventListener('submit', event => {
 
   form.reset();
 });
+
+  const lightbox = new SimpleLightbox('.gallery a');
+  lightbox.refresh();
