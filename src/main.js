@@ -49,12 +49,15 @@ form.addEventListener('submit', event => {
       }
       renderGallery(data, gallery);
     })
-    .catch(error => {
+      .catch(error => {
+      disableLoader();
       showError('Something went wrong. Please try again later.');
     });
 
   form.reset();
 });
+
+
 
   const lightbox = new SimpleLightbox('.gallery a');
   lightbox.refresh();
