@@ -19,22 +19,21 @@ function activateLoader() {
 }
 
 form.addEventListener('submit', event => {
-    event.preventDefault();
-    
-     const search = input.value.trim();
+  event.preventDefault();
+  
+  const search = input.value.trim();
   if (search === '') {
-    showError(
-      'Sorry, there are no images matching your search query. Please try again!'
-    );
+    showError('Sorry, there are no images matching your search query. Please try again!');
     return;
-    }
-    
-    const params = {
+  }
+  
+  const params = {
     q: search,
     image_type: 'photo',
     orientation: 'horizontal',
     safesearch: true,
   };
+
   gallery.innerHTML = '';
     activateLoader();
     
@@ -47,17 +46,22 @@ form.addEventListener('submit', event => {
         );
         return;
       }
+
       renderGallery(data, gallery);
+
+        const lightbox = new SimpleLightbox('.gallery a');
+      lightbox.refresh();
+
+        form.reset();
+
     })
-      .catch(error => {
+  .catch(error => {
       disableLoader();
-      showError('Something went wrong. Please try again later.');
+      // showError('Something went wrong. Please try again later.');
     });
 
-  form.reset();
+
 });
 
 
 
-  const lightbox = new SimpleLightbox('.gallery a');
-  lightbox.refresh();
