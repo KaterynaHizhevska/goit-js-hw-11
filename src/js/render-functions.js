@@ -34,8 +34,6 @@ export function renderGallery(data, galleryElement) {
 
 }
 
-
-  
 export function showError(message) {
   iziToast.error({
     title: 'Error',

@@ -9,13 +9,13 @@ const loader = document.querySelector('.loader');
 const gallery = document.querySelector('.gallery');
 
 function disableLoader() {
-  loader.classList.remove('active');
-  loader.classList.add('hidden');
+    loader.classList.add('is-hidden');
+
 }
 
 function activateLoader() {
-  loader.classList.remove('hidden');
-  loader.classList.add('active');
+
+    loader.classList.remove('is-hidden');
 }
 
 form.addEventListener('submit', event => {
@@ -49,19 +49,17 @@ form.addEventListener('submit', event => {
 
       renderGallery(data, gallery);
 
-        const lightbox = new SimpleLightbox('.gallery a');
-      lightbox.refresh();
-
         form.reset();
 
     })
   .catch(error => {
-      disableLoader();
-      // showError('Something went wrong. Please try again later.');
+      showError('Something went wrong. Please try again later.');
     });
 
 
 });
 
+const lightbox = new SimpleLightbox('.gallery a');
+      lightbox.refresh();
 
 
